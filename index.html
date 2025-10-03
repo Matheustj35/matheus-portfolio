@@ -1,311 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Matheus — Portfólio</title>
-<style>
-  :root{
-    --bg:#fafafa; --card:#fff; --accent:#111; --muted:#666;
-    --glass: rgba(255,255,255,0.8);
-    --maxw:1200px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:var(--bg); color:var(--accent); -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw);margin:30px auto;padding:20px}
-  header.site{
-    display:flex;gap:24px;align-items:center;padding:18px 0;
-  }
-  .avatar{
-    width:140px;height:140px;border-radius:16px;background:linear-gradient(135deg,#e9e9e9,#f7f7f7);
-    display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);
-  }
-  h1{font-size:32px;margin:0 0 6px}
-  p.lead{margin:0;color:var(--muted)}
-  .menu{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-  .btn{background:var(--card);border:1px solid #e6e6e6;padding:10px 14px;border-radius:12px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.04)}
-  .btn:active{transform:translateY(1px)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:26px}
-  section.page{display:none;padding:18px 0}
-  section.page.active{display:block}
-  .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid #eee;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
-  .back{display:inline-block;margin:0 0 12px;background:#222;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;border:0}
-  .gallery{display:flex;gap:10px;flex-wrap:wrap}
-  .thumb{width:120px;height:80px;background:#f0f0f0;border-radius:8px}
-  /* Programação style */
-  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-  .project-card{padding:12px;border-radius:10px;border:1px solid #eee;background:linear-gradient(180deg,#fff,#fbfbfb)}
-  .project-card h4{margin:0 0 8px}
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:60}
-  .modal .box{width:100%;max-width:900px;background:#0b0b0b;padding:18px;border-radius:8px;color:#e6e6e6}
-  .code-area{height:300px;overflow:auto;background:#050505;padding:12px;border-radius:6px;font-family:monospace;font-size:13px;line-height:1.4}
-  .modal .close{background:#222;border:0;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
-  footer{margin-top:28px;color:var(--muted);font-size:14px}
-  @media (max-width:720px){
-    header.site{flex-direction:column;align-items:flex-start}
-    .avatar{width:100px;height:100px}
-    h1{font-size:24px}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Matheus</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site" role="banner">
-      <div class="avatar" aria-hidden="true">Foto</div>
-      <div>
-        <h1>Matheus — Mais que RH</h1>
-        <p class="lead">Construindo conexões, histórias e resultados.</p>
-        <div class="menu" role="navigation" aria-label="Seções">
-          <button class="btn" data-target="about">Matheus além do crachá</button>
-          <button class="btn" data-target="trajetoria">Trajetória</button>
-          <button class="btn" data-target="events">Eventos</button>
-          <button class="btn" data-target="tech">Programação / Tecnologia</button>
-          <button class="btn" data-target="voluntario">Trabalhos voluntários</button>
-          <button class="btn" data-target="cursos">Cursos</button>
-          <button class="btn" data-target="reconhecimento">Reconhecimentos</button>
-          <button class="btn" data-target="blog">Blog / Insights</button>
-          <button class="btn" data-target="futuro">Linha do tempo futura</button>
-        </div>
-      </div>
-    </header>
 
-    <!-- HOME quick cards -->
-    <div id="home" class="page active">
-      <div class="grid">
-        <div class="card"><h3>Resumo rápido</h3><p class="muted">BP de Comercial & Exportação — automações com Google Apps Script — projetos de diversidade e treinamentos.</p></div>
-        <div class="card"><h3>CTA</h3><p>Teste a seção de Programação para ver o efeito de demo.</p></div>
-        <div class="card"><h3>Download</h3><p><button class="btn">Download CV (placeholder)</button></p></div>
-      </div>
-    </div>
+  <header>
+    <h1>Matheus B. — Portfólio</h1>
+    <nav>
+      <ul>
+        <li><a href="#alem-do-cracha">Matheus além do crachá</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#programacoes">Programações</a></li>
+        <li><a href="#voluntariado">Voluntariado</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#blog">Blog / Insights</a></li>
+        <li><a href="#linha-futura">Linha do tempo futura</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- About -->
-    <section id="about" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card">
-        <h2>Matheus além do crachá</h2>
-        <p>No trabalho, conecto pessoas e resultados. Fora do trabalho, gosto de viajar, jogar videogame e estar com a família. (Texto exemplo — substitua quando quiser.)</p>
-        <h3 style="margin-top:12px">Pets</h3>
-        <div class="gallery">
-          <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
-        </div>
-        <h3 style="margin-top:12px">Viagens</h3>
-        <div class="gallery">
-          <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
-        </div>
-      </div>
+  <main>
+    <section id="alem-do-cracha">
+      <h2>Matheus além do crachá</h2>
+      <p>Aqui vamos mostrar quem eu sou fora do ambiente de trabalho.</p>
     </section>
 
-    <!-- Trajetoria -->
-    <section id="trajetoria" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card">
-        <h2>Trajetória</h2>
-        <p>Crachás clicáveis:</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-          <button class="btn" onclick="openCompany('colgate')">Colgate (Aprendiz)</button>
-          <button class="btn" onclick="openCompany('prettyjet')">Pretty Jet (Estágio)</button>
-          <button class="btn" onclick="openCompany('dexco')">Dexco (BP)</button>
-        </div>
-
-        <div id="companyDetail" style="margin-top:16px"></div>
-      </div>
+    <section id="trajetoria">
+      <h2>Trajetória Profissional</h2>
+      <p>História das empresas e experiências.</p>
     </section>
 
-    <!-- Events -->
-    <section id="events" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card">
-        <h2>Eventos</h2>
-        <p>Exemplo de cards estilo "stories".</p>
-        <div class="projects">
-          <div class="project-card"><strong>Evento Diversidade 2024</strong><p class="muted">Resumo curto</p></div>
-          <div class="project-card"><strong>Workshop Recrutamento</strong><p class="muted">Resumo curto</p></div>
-          <div class="project-card"><strong>Team building</strong><p class="muted">Resumo curto</p></div>
-        </div>
-      </div>
+    <section id="eventos">
+      <h2>Eventos</h2>
+      <p>Projetos, dinâmicas e ações que participei.</p>
     </section>
 
-    <!-- Tech -->
-    <section id="tech" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card">
-        <h2>Programação / Tecnologia</h2>
-        <p>Ambiente técnico — clique em um projeto para abrir demo de código.</p>
-        <div class="projects">
-          <div class="project-card">
-            <h4>Organograma</h4>
-            <p class="muted">Gera organograma a partir de planilha.</p>
-            <button class="btn" onclick="openProject('organograma')">Ver projeto</button>
-          </div>
-          <div class="project-card">
-            <h4>Sistema de gestão de tarefas</h4>
-            <p class="muted">Board simples com automações.</p>
-            <button class="btn" onclick="openProject('tarefas')">Ver projeto</button>
-          </div>
-          <div class="project-card">
-            <h4>Gerador de slides</h4>
-            <p class="muted">Cria slides com template automático.</p>
-            <button class="btn" onclick="openProject('slides')">Ver projeto</button>
-          </div>
-        </div>
-      </div>
+    <section id="programacoes">
+      <h2>Programações & Automação</h2>
+      <p>Meus sistemas, scripts e automações criadas.</p>
     </section>
 
-    <!-- Voluntary -->
-    <section id="voluntario" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card"><h2>Trabalhos voluntários</h2><p>Cards de ações voluntárias.</p></div>
+    <section id="voluntariado">
+      <h2>Trabalho Voluntário</h2>
+      <p>Minhas experiências de impacto social.</p>
     </section>
 
-    <!-- Cursos -->
-    <section id="cursos" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card"><h2>Cursos</h2><p>Lista de cursos com resumo e foto (placeholder).</p></div>
+    <section id="cursos">
+      <h2>Cursos</h2>
+      <p>Formações e certificações relevantes.</p>
     </section>
 
-    <!-- Reconhecimento -->
-    <section id="reconhecimento" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card"><h2>Reconhecimentos / Impacto</h2><p>Prints e frases de reconhecimento.</p></div>
+    <section id="blog">
+      <h2>Blog / Insights</h2>
+      <p>Textos sobre RH, Psicologia e Carreira.</p>
     </section>
 
-    <!-- Blog -->
-    <section id="blog" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card"><h2>Blog / Insights</h2><p>Post exemplo — escreva sobre RH, psicologia ou automações.</p></div>
+    <section id="linha-futura">
+      <h2>Linha do Tempo Futura</h2>
+      <p>Meus próximos passos e sonhos profissionais.</p>
     </section>
+  </main>
 
-    <!-- Linha do tempo futura -->
-    <section id="futuro" class="page">
-      <button class="back" onclick="history.back()">Voltar</button>
-      <div class="card">
-        <h2>Linha do tempo futura</h2>
-        <ul>
-          <li><strong>2025:</strong> Finalizar Psicologia</li>
-          <li><strong>2026:</strong> Especialização em Psicologia Organizacional</li>
-          <li><strong>2027:</strong> Efetivação / Crescer como BP</li>
-        </ul>
-      </div>
-    </section>
+  <footer>
+    <p>© 2025 Matheus B. - Todos os direitos reservados.</p>
+  </footer>
 
-    <footer><small>Feito por Matheus — protótipo inicial. Arquivo único para começar.</small></footer>
-  </div>
-
-  <!-- Modal para projetos (código demo) -->
-  <div id="modal" class="modal" style="display:none" aria-hidden="true">
-    <div class="box">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <strong id="modalTitle">Projeto</strong>
-        <div>
-          <button class="close" onclick="closeModal()">Fechar</button>
-        </div>
-      </div>
-      <div class="code-area"><pre id="codeArea" style="white-space:pre-wrap;"></pre></div>
-      <div style="margin-top:8px;display:flex;gap:8px;justify-content:flex-end">
-        <a id="githubLink" class="btn" href="#" target="_blank">Ver código (placeholder)</a>
-        <a id="demoLink" class="btn" href="#" target="_blank">Rodar demo (placeholder)</a>
-      </div>
-    </div>
-  </div>
-
-<script>
-  // Navegação SPA simples
-  const pages = Array.from(document.querySelectorAll('.page'));
-  const home = document.getElementById('home');
-
-  function showPage(id){
-    pages.forEach(p=>p.classList.remove('active'));
-    const el = document.getElementById(id);
-    if(el) el.classList.add('active');
-    // scroll topo
-    window.scrollTo(0,0);
-  }
-
-  document.querySelectorAll('[data-target]').forEach(btn=>{
-    btn.addEventListener('click', ()=> {
-      const t = btn.getAttribute('data-target');
-      window.location.hash = t;
-    });
-  });
-
-  // Handle hash changes
-  function handleHash(){
-    const h = location.hash.replace('#','');
-    if(!h) { showPage('home'); return; }
-    // Only show if page exists
-    if(document.getElementById(h)) showPage(h);
-    else showPage('home');
-  }
-  window.addEventListener('hashchange', handleHash);
-  // initial
-  handleHash();
-
-  // Company detail example (Trajetória)
-  function openCompany(slug){
-    const d = document.getElementById('companyDetail');
-    const content = {
-      colgate: '<h3>Colgate</h3><p>Aprendiz — apoio logístico e RH. Responsabilidades: nota fiscal, canhotos, apoio ao time.</p>',
-      prettyjet: '<h3>Pretty Jet</h3><p>Estagiário — RH generalista, desde contratação até desligamento.</p>',
-      dexco: '<h3>Dexco</h3><p>BP — Suporte ao time comercial, exportação e logística. Projetos de integração e automação.</p>'
-    };
-    d.innerHTML = '<div class="card">'+(content[slug] || 'Detalhes não encontrados')+'</div>';
-  }
-
-  // Modal e typing effect
-  const modal = document.getElementById('modal');
-  const codeArea = document.getElementById('codeArea');
-  const modalTitle = document.getElementById('modalTitle');
-
-  const projectCode = {
-    organograma: `// Exemplo simplificado - Organograma generator (pseudo-code)\nfunction gerarOrganograma(sheet){\n  const rows = sheet.getData();\n  const nodes = rows.map(r => ({id: r.id, name: r.nome, parent: r.chefe}));\n  // criar grafo e desenhar\n  drawGraph(nodes);\n}\n\n// Tecnologias: Google Sheets, Apps Script, D3.js (opcional)`,
-    tarefas: `// Task manager - lógica simples\nconst tasks = [];\nfunction addTask(text){\n  tasks.push({id:Date.now(), text, done:false});\n  render();\n}\nfunction complete(id){\n  const t = tasks.find(x=>x.id===id); if(t) t.done = true; render();\n}`,
-    slides: `// Gerador de slides (exemplo)\nfunction gerarSlides(template, items){\n  items.forEach(item => {\n    const slide = template.clone();\n    slide.title = item.title; slide.body = item.text;\n    deck.add(slide);\n  });\n  deck.export('pptx');\n}`
-  };
-
-  let typingTimer = null;
-  function typeCode(text, el, speed=12, cb){
-    el.textContent = '';
-    let i=0;
-    clearInterval(typingTimer);
-    typingTimer = setInterval(()=>{
-      i++;
-      el.textContent = text.slice(0,i);
-      el.scrollTop = el.scrollHeight;
-      if(i>=text.length){ clearInterval(typingTimer); if(cb) cb(); }
-    }, speed);
-  }
-
-  function openProject(slug){
-    const titleMap = {organograma:'Organograma', tarefas:'Gestor de tarefas', slides:'Gerador de slides'};
-    modalTitle.textContent = titleMap[slug] || 'Projeto';
-    codeArea.textContent = '';
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden','false');
-    // typing effect
-    const sample = projectCode[slug] || '// Código de demonstração não disponível';
-    typeCode(sample, codeArea, 8);
-    // placeholders for links (replace later)
-    document.getElementById('githubLink').href = '#';
-    document.getElementById('demoLink').href = '#';
-  }
-
-  function closeModal(){
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden','true');
-    clearInterval(typingTimer);
-  }
-
-  // Close modal on escape
-  window.addEventListener('keydown', e=>{
-    if(e.key==='Escape') closeModal();
-  });
-
-  // Optional: if user clicked a deep-link-like ?open=tech
-  (function(){ const params = new URLSearchParams(location.search); if(params.get('open')) { window.location.hash = params.get('open'); } })();
-
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
