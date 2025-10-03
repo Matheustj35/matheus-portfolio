@@ -1,134 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Matheus</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus — Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Página Inicial -->
+    <section id="home" class="active">
+        <div class="intro">
+            <img src="minha-foto.jpg" alt="Foto de Matheus" class="profile-pic">
+            <h1>Bem-vindo ao meu espaço!</h1>
+            <p>Psicologia, RH e propósito em cada passo da jornada.</p>
 
-  <header class="hero">
-  <img src="foto-perfil.jpg" alt="Foto de Matheus" class="perfil">
-  <h1>Matheus B. — Além do Crachá</h1>
-  <p>"Conectando pessoas, ideias e tecnologia."</p>
-  <nav>
-    <ul>
-      <li><a href="#alem-do-cracha">Além do Crachá</a></li>
-      <li><a href="#trajetoria">Trajetória</a></li>
-      <li><a href="#eventos">Eventos</a></li>
-      <li><a href="#programacoes">Tecnologia</a></li>
-      <li><a href="#voluntariado">Voluntariado</a></li>
-      <li><a href="#cursos">Cursos</a></li>
-      <li><a href="#blog">Insights</a></li>
-      <li><a href="#linha-futura">Futuro</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <main>
-    <section id="alem-do-cracha">
-      <h2>Matheus além do crachá</h2>
-      <p>Aqui vamos mostrar quem eu sou fora do ambiente de trabalho.</p>
+            <div class="buttons">
+                <button onclick="mostrarSecao('sobre')">Sobre mim</button>
+                <button onclick="mostrarSecao('experiencias')">Experiências</button>
+                <button onclick="mostrarSecao('contato')">Contato</button>
+            </div>
+        </div>
     </section>
 
-    <section id="trajetoria">
-  <h2>Trajetória Profissional</h2>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Dexco</h3>
-        <span class="ano">2023 - Atual</span>
-        <p>Business Partner de RH — apoio às áreas Comercial, Exportação e Logística. Desenvolvimento de ações de engajamento e automações internas.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Pretty Jet</h3>
-        <span class="ano">2022 - 2023</span>
-        <p>Estagiário de RH — atuação generalista em todos os subsistemas, desde admissão até desligamento.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Colgate-Palmolive</h3>
-        <span class="ano">2019 - 2022</span>
-        <p>Aprendiz de RH e Logística — experiência em processos administrativos, folha, e apoio à equipe de RH.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <section id="eventos">
-      <h2>Eventos</h2>
-      <p>Projetos, dinâmicas e ações que participei.</p>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="hidden">
+        <h2>Sobre mim</h2>
+        <p>Sou Matheus, estudante de Psicologia e profissional de Recursos Humanos. Tenho paixão por entender pessoas e criar conexões reais no ambiente de trabalho. Minha trajetória vai da logística ao RH, passando por aprendizados que moldaram meu olhar humano e estratégico.</p>
+        <button class="voltar" onclick="voltar()">Voltar</button>
     </section>
 
-<section id="programacoes">
-  <h2>Programações & Automações</h2>
-  <p>Confira alguns sistemas e automações que desenvolvi para facilitar processos de RH e gestão.</p>
-
-  <div class="cards-container">
-    <div class="card" onclick="abrirProjeto('Organograma Interativo')">
-      <h3>Organograma Interativo</h3>
-      <p>Visualização dinâmica da estrutura organizacional.</p>
-    </div>
-
-    <div class="card" onclick="abrirProjeto('Gestão de Tarefas')">
-      <h3>Gestão de Tarefas</h3>
-      <p>Sistema em Apps Script para controle de entregas e pendências.</p>
-    </div>
-
-    <div class="card" onclick="abrirProjeto('Gerador de Slides')">
-      <h3>Gerador de Slides Automático</h3>
-      <p>Automação para gerar apresentações no Google Slides.</p>
-    </div>
-
-    <div class="card" onclick="abrirProjeto('Busca Hunter Diversidade')">
-      <h3>Busca Hunter Diversidade</h3>
-      <p>Automação para consolidar indicações de talentos diversos.</p>
-    </div>
-  </div>
-
-  <div id="projetoModal" class="modal">
-    <div class="modal-content">
-      <span class="fechar" onclick="fecharProjeto()">&times;</span>
-      <pre id="codigoSimulado"></pre>
-    </div>
-  </div>
-</section>
-
-
-    <section id="voluntariado">
-      <h2>Trabalho Voluntário</h2>
-      <p>Minhas experiências de impacto social.</p>
+    <!-- Seção Experiências -->
+    <section id="experiencias" class="hidden">
+        <h2>Minhas experiências</h2>
+        <ul>
+            <li><strong>Dexco</strong> — BP de RH, apoiando o time comercial e exportação.</li>
+            <li><strong>Pretty Jet</strong> — Estagiário generalista de RH.</li>
+            <li><strong>Colgate</strong> — Aprendiz em Logística e depois em RH.</li>
+        </ul>
+        <button class="voltar" onclick="voltar()">Voltar</button>
     </section>
 
-    <section id="cursos">
-      <h2>Cursos</h2>
-      <p>Formações e certificações relevantes.</p>
+    <!-- Seção Contato -->
+    <section id="contato" class="hidden">
+        <h2>Contato</h2>
+        <p>Quer falar comigo? Me chama pelo LinkedIn ou por e-mail:</p>
+        <p><a href="https://www.linkedin.com/in/matheus" target="_blank">LinkedIn</a></p>
+        <p><a href="mailto:matheus@email.com">matheus@email.com</a></p>
+        <button class="voltar" onclick="voltar()">Voltar</button>
     </section>
 
-    <section id="blog">
-      <h2>Blog / Insights</h2>
-      <p>Textos sobre RH, Psicologia e Carreira.</p>
-    </section>
+    <script>
+        function mostrarSecao(secaoId) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(secaoId).classList.remove('hidden');
+        }
 
-    <section id="linha-futura">
-      <h2>Linha do Tempo Futura</h2>
-      <p>Meus próximos passos e sonhos profissionais.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Matheus B. - Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
+        function voltar() {
+            document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('home').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
