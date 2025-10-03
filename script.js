@@ -1,43 +1,30 @@
-// Botão "Voltar ao topo"
-const btnTopo = document.createElement('button');
-btnTopo.innerText = "↑";
-btnTopo.id = "btnTopo";
-document.body.appendChild(btnTopo);
+// Seleciona todas as seções do site
+const sections = document.querySelectorAll("section");
 
-btnTopo.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Função que mostra a seção selecionada e esconde as demais
+function showSection(sectionId) {
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.classList.add("active");
+        } else {
+            section.classList.remove("active");
+        }
+    });
 
-window.addEventListener('scroll', () => {
-  btnTopo.style.display = window.scrollY > 400 ? 'block' : 'none';
-});
-
-function abrirProjeto(nome) {
-  const modal = document.getElementById('projetoModal');
-  const codigo = document.getElementById('codigoSimulado');
-  modal.style.display = 'block';
-  codigo.innerText = `
-  // Projeto: ${nome}
-  // Carregando scripts...
-  // Inicializando interface...
-  // Executando automação...
-
-  function ${nome.replace(/\s/g, '')}() {
-      console.log("Sistema ${nome} iniciado com sucesso!");
-  }
-  `;
-
-  // Efeito "digitando"
-  let i = 0;
-  const texto = codigo.innerText;
-  codigo.innerText = '';
-  const intervalo = setInterval(() => {
-    codigo.innerText += texto.charAt(i);
-    i++;
-    if (i > texto.length) clearInterval(intervalo);
-  }, 10);
+    // Rola pro topo sempre que mudar de seção
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function fecharProjeto() {
-  document.getElementById('projetoModal').style.display = 'none';
+// Função para voltar à página inicial
+function voltar() {
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+    document.getElementById("inicio").classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+// Ativa a primeira seção (início) ao carregar o site
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("inicio").classList.add("active");
+});
