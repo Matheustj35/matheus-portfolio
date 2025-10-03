@@ -42,10 +42,40 @@
       <p>Projetos, dinâmicas e ações que participei.</p>
     </section>
 
-    <section id="programacoes">
-      <h2>Programações & Automação</h2>
-      <p>Meus sistemas, scripts e automações criadas.</p>
-    </section>
+<section id="programacoes">
+  <h2>Programações & Automações</h2>
+  <p>Confira alguns sistemas e automações que desenvolvi para facilitar processos de RH e gestão.</p>
+
+  <div class="cards-container">
+    <div class="card" onclick="abrirProjeto('Organograma Interativo')">
+      <h3>Organograma Interativo</h3>
+      <p>Visualização dinâmica da estrutura organizacional.</p>
+    </div>
+
+    <div class="card" onclick="abrirProjeto('Gestão de Tarefas')">
+      <h3>Gestão de Tarefas</h3>
+      <p>Sistema em Apps Script para controle de entregas e pendências.</p>
+    </div>
+
+    <div class="card" onclick="abrirProjeto('Gerador de Slides')">
+      <h3>Gerador de Slides Automático</h3>
+      <p>Automação para gerar apresentações no Google Slides.</p>
+    </div>
+
+    <div class="card" onclick="abrirProjeto('Busca Hunter Diversidade')">
+      <h3>Busca Hunter Diversidade</h3>
+      <p>Automação para consolidar indicações de talentos diversos.</p>
+    </div>
+  </div>
+
+  <div id="projetoModal" class="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharProjeto()">&times;</span>
+      <pre id="codigoSimulado"></pre>
+    </div>
+  </div>
+</section>
+
 
     <section id="voluntariado">
       <h2>Trabalho Voluntário</h2>
