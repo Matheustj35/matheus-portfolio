@@ -149,3 +149,40 @@ footer {
   cursor: pointer;
   color: #00ff99;
 }
+/* ====== LINHA DO TEMPO ====== */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 3px solid #004aad;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  background-color: #004aad;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 5px;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-content .ano {
+  color: #0073ff;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
