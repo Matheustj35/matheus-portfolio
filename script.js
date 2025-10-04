@@ -135,3 +135,40 @@ function prevStory(){
   storyIndex = (storyIndex - 1 + stories.length) % stories.length;
   renderStory();
 }
+// ---- MODAL ---- //
+const modal = document.getElementById("projectModal");
+const modalContent = document.getElementById("modalContent");
+const modalTitle = document.getElementById("modalTitle");
+
+// Abre o modal com base no projeto
+function openProject(title, code, demoUrl) {
+    modalTitle.textContent = title;
+    modalContent.innerHTML = `
+        <pre style="color:#0f0; background:#111; padding:10px; border-radius:5px; overflow:auto; max-height:300px;">${code}</pre>
+        <div style="margin-top:10px;">
+            <button onclick="showCode('${code.replace(/`/g, "\\`")}')">Ver código</button>
+            <button onclick="runDemo('${demoUrl}')">Rodar demo</button>
+        </div>
+    `;
+    modal.style.display = "flex";
+}
+
+// Fecha o modal
+function closeModal() {
+    modal.style.display = "none";
+    modalContent.innerHTML = "";
+    modalTitle.textContent = "";
+}
+
+// Mostrar apenas código
+function showCode(code) {
+    modalContent.innerHTML = `
+        <pre style="color:#0f0; background:#111; padding:10px; border-radius:5px; overflow:auto; max-height:300px;">${code}</pre>
+        <button onclick="closeModal()">Fechar</button>
+    `;
+}
+
+// Rodar demo (abre em nova aba)
+function runDemo(url) {
+    window.open(url, "_blank");
+}
