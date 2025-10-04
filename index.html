@@ -1,265 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Matheus — Portfólio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Matheus</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- HOME: única tela visível inicialmente -->
-  <main id="home" class="page active">
-    <div class="home-inner">
-      <div class="home-left">
-        <div class="photo-frame">
-          <img src="minha-foto.jpg" alt="Foto Matheus" class="profile-photo">
-          <!-- blocos decorativos tipo "quebra-cabeça" -->
-          <div class="blocks">
-            <div class="block b1"></div>
-            <div class="block b2"></div>
-            <div class="block b3"></div>
-            <div class="block b4"></div>
-            <div class="block b5"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="home-right">
-        <h1 class="hero-title">Conectando pessoas e resultados com criatividade e clareza</h1>
-        <p class="hero-sub">Psicologia aplicada ao RH • Automação prática • Projetos com impacto</p>
-
-        <nav class="home-nav" aria-label="Seções">
-          <button class="nav-btn" onclick="openSection('sobre')">Matheus além do crachá</button>
-          <button class="nav-btn" onclick="openSection('trajetoria')">Trajetória</button>
-          <button class="nav-btn" onclick="openSection('eventos')">Eventos</button>
-          <button class="nav-btn" onclick="openSection('programacao')">Programação / Tecnologia</button>
-          <button class="nav-btn" onclick="openSection('voluntariado')">Trabalhos voluntários</button>
-          <button class="nav-btn" onclick="openSection('cursos')">Cursos</button>
-          <button class="nav-btn" onclick="openSection('reconhecimentos')">Reconhecimentos / Impacto</button>
-          <button class="nav-btn" onclick="openSection('blog')">Blog / Insights</button>
-          <button class="nav-btn" onclick="openSection('linha-futura')">Linha do tempo futura</button>
-          <button class="nav-btn" onclick="openSection('contato')">Contato</button>
-        </nav>
-
-        <p class="hint">Clique em qualquer botão para ver a seção — a tela inicial sempre fica limpa.</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- SEÇÕES OCULTAS (aparecem quando o usuário clica) -->
-
-  <!-- SOBRE / ALEM DO CRACHÁ -->
-  <section id="sobre" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Matheus — além do crachá</h2>
-      <div class="about-grid">
-        <div class="about-left">
-          <img src="foto-namorada.jpg" alt="Matheus e namorada" class="about-photo">
-        </div>
-        <div class="about-right">
-          <p>Sou estudante de Psicologia e atuo como BP de RH. Fora do trabalho, gosto de viagens, videogame, família e dos meus pets. Trabalho com automações, treinamentos e projetos de diversidade — sempre com olhar humano.</p>
-
-          <h3>Pets</h3>
-          <div class="thumbs">
-            <img src="pet1.jpg" alt="pet 1" class="thumb">
-            <img src="pet2.jpg" alt="pet 2" class="thumb">
-            <img src="pet3.jpg" alt="pet 3" class="thumb">
-          </div>
-
-          <h3>Viagens</h3>
-          <div class="thumbs">
-            <img src="viagem1.jpg" alt="viagem" class="thumb">
-            <img src="viagem2.jpg" alt="viagem" class="thumb">
-            <img src="viagem3.jpg" alt="viagem" class="thumb">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRAJETÓRIA -->
-  <section id="trajetoria" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Trajetória Profissional</h2>
-
-      <div class="timeline">
-        <article class="time-card">
-          <img src="dexco.jpg" alt="Dexco" class="company-thumb">
-          <div class="time-body">
-            <h3>Dexco</h3>
-            <span class="period">2023 — Atual</span>
-            <p>BP de RH: suporte ao comercial, exportação e logística. Projetos de integração, automações e DHO.</p>
-            <div class="task-cards">
-              <div class="task">Atendimento a gestores</div>
-              <div class="task">Automações em App Script</div>
-              <div class="task">Treinamentos e integração</div>
+    <!-- SEÇÃO INICIAL -->
+    <section id="inicio" class="active">
+        <div class="intro">
+            <img src="imgs/foto-perfil.jpg" alt="Foto Matheus" class="foto-perfil">
+            <h1>Bem-vindo ao meu portfólio!</h1>
+            <p>"Matheus fora e dentro do crachá"</p>
+            <div class="botoes">
+                <button onclick="showSection('trajetoria')">Trajetória</button>
+                <button onclick="showSection('eventos')">Eventos</button>
+                <button onclick="showSection('programacao')">Programação</button>
+                <button onclick="showSection('voluntario')">Trabalho Voluntário</button>
+                <button onclick="showSection('cursos')">Cursos</button>
+                <button onclick="showSection('alem-cracha')">Matheus além do crachá</button>
             </div>
-          </div>
-        </article>
+        </div>
+    </section>
 
-        <article class="time-card">
-          <img src="prettyjet.jpg" alt="Pretty Jet" class="company-thumb">
-          <div class="time-body">
-            <h3>Pretty Jet</h3>
-            <span class="period">2021 — 2023</span>
-            <p>Estágio em RH generalista: desde recrutamento até desligamento, folha e suporte ao time.</p>
-            <div class="task-cards">
-              <div class="task">Contratações</div>
-              <div class="task">Folha e Inventário</div>
-              <div class="task">Onboarding</div>
+    <!-- SEÇÃO TRAJETÓRIA -->
+    <section id="trajetoria">
+        <h2>Minha Trajetória</h2>
+        <p>Alguns momentos da minha carreira e aprendizados.</p>
+        <button onclick="voltar()">Voltar</button>
+    </section>
+
+    <!-- SEÇÃO EVENTOS -->
+    <section id="eventos">
+        <h2>Eventos</h2>
+        <p>Projetos e ações de diversidade que apoiei.</p>
+        <button onclick="voltar()">Voltar</button>
+    </section>
+
+    <!-- SEÇÃO PROGRAMAÇÃO -->
+    <section id="programacao">
+        <h2>Meus Projetos em Programação</h2>
+        <div class="cards">
+            <div class="card" onclick="openProject('Organograma Interativo', 'Código do organograma...', 'https://seu-link-demo.com')">
+                Organograma
             </div>
-          </div>
-        </article>
-
-        <article class="time-card">
-          <img src="colgate.jpg" alt="Colgate" class="company-thumb">
-          <div class="time-body">
-            <h3>Colgate</h3>
-            <span class="period">2018 — 2021</span>
-            <p>Aprendiz em logística e suporte ao RH: notas fiscais, canhotos, apoio em processos operacionais.</p>
-            <div class="task-cards">
-              <div class="task">Notas fiscais</div>
-              <div class="task">Multas e fretes</div>
-              <div class="task">Apoio ao RH</div>
+            <div class="card" onclick="openProject('Gestão de Tarefas', 'Código do sistema de tarefas...', 'https://seu-link-demo.com')">
+                Gestão de Tarefas
             </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTOS (stories style) -->
-  <section id="eventos" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Eventos</h2>
-      <div class="stories">
-        <button class="story-nav" onclick="prevStory()">◀</button>
-        <div class="story-frame" id="storyFrame">
-          <!-- conteúdo dinâmico via JS -->
+            <div class="card" onclick="openProject('Gerador de Slides', 'Código do gerador...', 'https://seu-link-demo.com')">
+                Gerador de Slides
+            </div>
         </div>
-        <button class="story-nav" onclick="nextStory()">▶</button>
-      </div>
-    </div>
-  </section>
+        <button onclick="voltar()">Voltar</button>
+    </section>
 
-  <!-- PROGRAMAÇÃO / TECNOLOGIA -->
-  <section id="programacao" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Programação & Automação</h2>
+    <!-- SEÇÃO TRABALHO VOLUNTÁRIO -->
+    <section id="voluntario">
+        <h2>Trabalho Voluntário</h2>
+        <p>Experiências que marcaram minha vida fora do ambiente corporativo.</p>
+        <button onclick="voltar()">Voltar</button>
+    </section>
 
-      <div class="cards-container">
-        <div class="proj-card" onclick="openProjectModal('Organograma Interativo', 'organograma')">
-          <h3>Organograma Interativo</h3>
-          <p>Gera organograma a partir de planilha com integração.</p>
+    <!-- SEÇÃO CURSOS -->
+    <section id="cursos">
+        <h2>Cursos</h2>
+        <p>Formações e aprendizados que construí ao longo da trajetória.</p>
+        <button onclick="voltar()">Voltar</button>
+    </section>
+
+    <!-- SEÇÃO ALÉM DO CRACHÁ -->
+    <section id="alem-cracha">
+        <h2>Matheus além do crachá</h2>
+        <p>Aqui eu mostro um pouco da minha vida pessoal, viagens, hobbies e meus pets.</p>
+        <button onclick="voltar()">Voltar</button>
+    </section>
+
+    <!-- MODAL DE PROJETOS -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">Fechar ×</span>
+            <h2 id="modalTitle">Projeto</h2>
+            <div id="modalContent"></div>
         </div>
-        <div class="proj-card" onclick="openProjectModal('Gestão de Tarefas', 'tarefas')">
-          <h3>Gestão de Tarefas</h3>
-          <p>Board + automações para controle de entregas.</p>
-        </div>
-        <div class="proj-card" onclick="openProjectModal('Gerador de Slides', 'slides')">
-          <h3>Gerador de Slides</h3>
-          <p>Cria apresentações automáticas com template.</p>
-        </div>
-        <div class="proj-card" onclick="openProjectModal('Busca Hunter Diversidade', 'hunter')">
-          <h3>Busca Hunter Diversidade</h3>
-          <p>Consolida indicações para banco de talentos PCD e diversidade.</p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Modal de projeto (terminal effect) -->
-  <div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span onclick="closeModal()" style="cursor:pointer; color:white;">Fechar ×</span>
-    <h2 id="modalTitle">Projeto</h2>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
-  <!-- VOLUNTARIADO -->
-  <section id="voluntariado" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Trabalhos voluntários</h2>
-      <div class="cards-container">
-        <div class="proj-card"><h3>Projeto Núclea</h3><p>Replantio e integração com time comercial.</p></div>
-        <div class="proj-card"><h3>Mentoria</h3><p>Apoio a recolocação profissional.</p></div>
-        <div class="proj-card"><h3>Ações locais</h3><p>Eventos comunitários e campanhas.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CURSOS -->
-  <section id="cursos" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Cursos</h2>
-      <ul class="course-list">
-        <li><strong>Graduação em Psicologia</strong> — Universidade (em andamento)</li>
-        <li><strong>Workshop R&S</strong> — Participação em workshop prático</li>
-        <li><strong>Curso Apps Script</strong> — Automação aplicada a RH</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- RECONHECIMENTOS -->
-  <section id="reconhecimentos" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Reconhecimentos / Impacto</h2>
-      <div class="recognition-grid">
-        <div class="rec-card">Feedback: "Ótimo trabalho no projeto X"</div>
-        <div class="rec-card">+100 pessoas impactadas em treinamentos</div>
-        <div class="rec-card">Elogio de gestor: melhoria de processo</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG / INSIGHTS -->
-  <section id="blog" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Blog / Insights</h2>
-      <article class="blog-post">
-        <h3>Psicologia no RH: pequenas ações que transformam</h3>
-        <p>Texto exemplo: ideias práticas que você pode aplicar em pequenas frentes de trabalho...</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- LINHA DO TEMPO FUTURA -->
-  <section id="linha-futura" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Linha do tempo futura</h2>
-      <ol class="future-list">
-        <li>2025 — Finalizar Psicologia</li>
-        <li>2026 — Especialização em Psicologia Organizacional</li>
-        <li>2027 — Efetivação como BP pleno / Crescer em People Analytics</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" class="page hidden">
-    <div class="section-inner">
-      <button class="back" onclick="voltar()">← Voltar</button>
-      <h2>Contato</h2>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/matheus" target="_blank">linkedin.com/in/matheus</a></p>
-      <p>Email: <a href="mailto:matheus@email.com">matheus@email.com</a></p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <small>© 2025 Matheus — Portfólio</small>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
