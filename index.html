@@ -174,17 +174,13 @@
   </section>
 
   <!-- Modal de projeto (terminal effect) -->
-  <div id="projectModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeProjectModal()">Fechar ✕</button>
-      <h3 id="modalTitle">Projeto</h3>
-      <pre id="modalCode" class="code-area"></pre>
-      <div class="modal-actions">
-        <a id="modalGithub" href="#" target="_blank" class="link-btn">Ver código</a>
-        <a id="modalDemo" href="#" target="_blank" class="link-btn">Rodar demo</a>
-      </div>
-    </div>
+  <div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal()" style="cursor:pointer; color:white;">Fechar ×</span>
+    <h2 id="modalTitle">Projeto</h2>
+    <div id="modalContent"></div>
   </div>
+</div>
 
   <!-- VOLUNTARIADO -->
   <section id="voluntariado" class="page hidden">
