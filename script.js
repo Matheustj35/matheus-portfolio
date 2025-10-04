@@ -49,10 +49,23 @@ function closeModal() {
 }
 
 function showCode(code) {
-    modalContent.innerHTML = `
-        <pre style="color:#0f0; background:#111; padding:10px; border-radius:5px; overflow:auto; max-height:300px;">${code}</pre>
-        <button onclick="closeModal()">Fechar</button>
-    `;
+    modalContent.innerHTML = `<pre id="typingCode" class="typing"></pre>
+        <button style="margin-top:10px;" onclick="closeModal()">Fechar</button>`;
+
+    let i = 0;
+    const speed = 20; // velocidade em ms (quanto menor, mais rápido)
+
+    function typeWriter() {
+        if (i < code.length) {
+            document.getElementById("typingCode").textContent += code.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            // remove cursor piscando depois de terminar
+            document.getElementById("typingCode").classList.remove("typing");
+        }
+    }
+    typeWriter();
 }
 
 function runDemo(url) {
